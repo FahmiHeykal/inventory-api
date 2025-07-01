@@ -57,7 +57,7 @@ Inventory Management API adalah backend RESTful berbasis Node.js, Express.js, da
    - Mocking database agar test efisien
 
 ## Struktur Folder
-``
+```
 inventory-api/
 ├── src/
 │   ├── config/               # Konfigurasi environment dan koneksi database
@@ -81,7 +81,7 @@ inventory-api/
 ├── .gitignore
 ├── package.json
 └── README.md
-``
+```
 
 ## Instalasi
 
