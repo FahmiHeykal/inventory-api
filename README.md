@@ -84,24 +84,24 @@ inventory-api/
 ```
 
 ## Instalasi
-# 1. Clone repository
+1. Clone repository
 ```bash
 git clone https://github.com/username/inventory-api.git
 cd inventory-api
 ```
 
-2. Install dependencies:
+2. Install dependencies :
 ```bash
 npm install
 ```
 
-4. Setup environment:
-    .env
+4. Setup environment :
+    `.env`
 
 5. Isi file .env:
-   PORT=3000
+  `PORT=3000
    DB_URL=postgresql://postgres:yourpassword@localhost:5432/inventory_db
-   JWT_SECRET=---
+   JWT_SECRET=---`
 
 6. Setup database :
    - Buat database bernama inventory_db
