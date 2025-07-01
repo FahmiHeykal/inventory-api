@@ -51,11 +51,10 @@ Inventory Management API adalah backend RESTful berbasis Node.js, Express.js, da
 9. Dokumentasi API
    - Swagger UI di endpoint /api/docs
    - Menampilkan semua endpoint beserta parameter, response, dan contoh
-
+  
 10. Testing
    - Unit testing pada modul auth dan produk menggunakan Jest
    - Mocking database agar test efisien
-
 
 ## Struktur Folder
 ```
