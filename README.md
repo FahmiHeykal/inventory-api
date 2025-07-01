@@ -13,48 +13,48 @@ Inventory Management API adalah backend RESTful berbasis Node.js, Express.js, da
 - PDFKit dan json2csv untuk ekspor data
 
 ## Fitur
-1. Autentikasi & Otorisasi
-   - Login dan register user dengan JWT
-   - Role-based access control: admin & staff
-   - Middleware untuk validasi token dan hak akses
+ 1. Autentikasi & Otorisasi
+    - Login dan register user dengan JWT
+    - Role-based access control: admin & staff
+    - Middleware untuk validasi token dan hak akses
 
-2. Manajemen Produk
-   - CRUD produk dengan validasi
-   - Soft delete : produk tidak dihapus dari database
-   - Filter produk berdasarkan kategori, supplier, dan level stok
-   - Pagination dan search support
+ 2. Manajemen Produk
+    - CRUD produk dengan validasi
+    - Soft delete: produk tidak dihapus dari database
+    - Filter produk berdasarkan kategori, supplier, dan level stok
+    - Pagination dan search support
 
-3. Manajemen Supplier
-   - CRUD data supplier
-   - Relasi produk dengan supplier via foreign key
+ 3. Manajemen Supplier
+    - CRUD data supplier
+    - Relasi produk dengan supplier via foreign key
 
-4. Transaksi Stok
-   - Menambahkan transaksi stok IN (masuk) dan OUT (keluar)
-   - Otomatis menambah atau mengurangi jumlah stok
-   - Riwayat mutasi stok per produk
+ 4. Transaksi Stok
+    - Menambahkan transaksi stok IN (masuk) dan OUT (keluar)
+    - Otomatis menambah atau mengurangi jumlah stok
+    - Riwayat mutasi stok per produk
 
-5. Ekspor Data
-   - Ekspor data produk dan stok dalam format PDF dan CSV
-   - File tersimpan sementara dalam folder /public
+ 5. Ekspor Data
+    - Ekspor data produk dan stok dalam format PDF dan CSV
+    - File tersimpan sementara dalam folder `/public`
 
-6. Dashboard
-   - Ringkasan data : total produk, supplier, transaksi stok, dan produk dengan stok rendah
+ 6. Dashboard
+    - Ringkasan data: total produk, supplier, transaksi stok, dan produk dengan stok rendah
 
-7. Validasi
-   - Menggunakan Joi untuk validasi semua input
-   - Penanganan error dengan middleware centralized
+ 7. Validasi
+    - Menggunakan Joi untuk validasi semua input
+    - Penanganan error dengan middleware centralized
 
-8. Cronjob
-   - Cron berjalan tiap 1 menit untuk mengecek produk dengan stok < 10
-   - Menampilkan warning log di console jika ditemukan
+ 8. Cronjob
+    - Cron berjalan tiap 1 menit untuk mengecek produk dengan stok < 10
+    - Menampilkan warning log di console jika ditemukan
 
-9. Dokumentasi API
-   - Swagger UI di endpoint /api/docs
-   - Menampilkan semua endpoint beserta parameter, response, dan contoh
-  
+ 9. Dokumentasi API
+    - Swagger UI di endpoint `/api/docs`
+    - Menampilkan semua endpoint beserta parameter, response, dan contoh
+
 10. Testing
-   - Unit testing pada modul auth dan produk menggunakan Jest
-   - Mocking database agar test efisien
+    - Unit testing pada modul auth dan produk menggunakan Jest
+    - Mocking database agar test efisien
 
 ## Struktur Folder
 ```
