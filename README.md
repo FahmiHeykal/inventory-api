@@ -100,20 +100,20 @@ npm install
 .env
 ```
 
-5. Isi file .env:
+5. Isi file .env :
 ```env
 PORT=3000
 DB_URL=postgresql://postgres:yourpassword@localhost:5432/inventory_db
-JWT_SECRET=your_jwt_secret_key
+JWT_SECRET=---
 ```
 
 6. Setup database :
    - Buat database bernama inventory_db
    - Jalankan semua file SQL di folder database/migrations
 
-7. Jalankan aplikasi:
+7. Jalankan aplikasi :
 ```bash
-   npm run dev
+npm run dev
 ```
 
 Aplikasi akan berjalan di : 
