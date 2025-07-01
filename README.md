@@ -85,7 +85,8 @@ inventory-api/
 
 ## Instalasi
 # 1. Clone repository
-```bash git clone https://github.com/username/inventory-api.git
+```bash
+git clone https://github.com/username/inventory-api.git
 cd inventory-api
 ```
 
@@ -107,14 +108,20 @@ npm install
    - Jalankan semua file SQL di folder database/migrations
 
 7. Jalankan aplikasi:
-   `npm run dev`
+```bash
+   npm run dev
+```
 
 Aplikasi akan berjalan di : 
-`http://localhost:3000`
+```bash
+http://localhost:3000
+```
 
 ## Dokumentasi API
 Buka dokumentasi Swagger di browser:
-`http://localhost:3000/api/docs`
+```bash
+http://localhost:3000/api/docs
+```
 
 ## Endpoint Penting
 
@@ -148,4 +155,6 @@ Ekspor Data:
 
 ## Testing
 Untuk menjalankan unit test :
+```bash
 npm test
+```
