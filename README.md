@@ -86,8 +86,8 @@ inventory-api/
 ## Instalasi
 
 1. Clone repository :
-   git clone `https://github.com/username/inventory-api.git`
-   `cd inventory-api`
+   ``hash git clone `https://github.com/username/inventory-api.git`
+   `cd inventory-api` ``
 
 2. Install dependencies:
    `npm install`
