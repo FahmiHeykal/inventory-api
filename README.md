@@ -56,6 +56,7 @@ Inventory Management API adalah backend RESTful berbasis Node.js, Express.js, da
    - Unit testing pada modul auth dan produk menggunakan Jest
    - Mocking database agar test efisien
 
+
 ## Struktur Folder
 ```
 inventory-api/
