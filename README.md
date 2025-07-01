@@ -96,12 +96,16 @@ npm install
 ```
 
 4. Setup environment :
-    `.env`
+```
+.env
+```
 
 5. Isi file .env:
-  `PORT=3000
-   DB_URL=postgresql://postgres:yourpassword@localhost:5432/inventory_db
-   JWT_SECRET=---`
+```env
+PORT=3000
+DB_URL=postgresql://postgres:yourpassword@localhost:5432/inventory_db
+JWT_SECRET=your_jwt_secret_key
+```
 
 6. Setup database :
    - Buat database bernama inventory_db
