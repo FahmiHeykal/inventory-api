@@ -1,0 +1,287 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Inventory API",
+    "version": "1.0.0",
+    "description": "Dokumentasi REST API Inventory - dibuat oleh Fahmi Heykal"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "tags": [
+    { "name": "Auth" },
+    { "name": "Product" },
+    { "name": "Stock" },
+    { "name": "Supplier" }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Register user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "email": { "type": "string" },
+                  "password": { "type": "string" },
+                  "role": { "type": "string", "enum": ["admin", "staff"] }
+                }
+              },
+              "example": {
+                "name": "Fahmi",
+                "email": "fahmi@example.com",
+                "password": "123456",
+                "role": "admin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "User berhasil didaftarkan" }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Login user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "email": "fahmi@example.com",
+                "password": "123456"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Berhasil login dan mendapatkan token"
+          }
+        }
+      }
+    },
+
+    "/products": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Ambil semua produk",
+        "responses": {
+          "200": { "description": "Daftar produk" }
+        }
+      },
+      "post": {
+        "tags": ["Product"],
+        "summary": "Tambah produk",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "name": "Kabel HDMI",
+                "category": "Elektronik",
+                "supplier_id": 1,
+                "stock": 50
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Produk ditambahkan" }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Detail produk",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Detail produk" }
+        }
+      },
+      "put": {
+        "tags": ["Product"],
+        "summary": "Update produk",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "name": "Kabel HDMI 2M",
+                "category": "Elektronik",
+                "supplier_id": 1,
+                "stock": 70
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Produk diperbarui" }
+        }
+      },
+      "delete": {
+        "tags": ["Product"],
+        "summary": "Soft delete produk",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Produk dihapus (soft delete)" }
+        }
+      }
+    },
+
+    "/stocks": {
+      "post": {
+        "tags": ["Stock"],
+        "summary": "Tambah transaksi stok IN / OUT",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "product_id": 1,
+                "type": "IN",
+                "quantity": 20,
+                "note": "Restock supplier"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Transaksi stok ditambahkan" }
+        }
+      }
+    },
+    "/stocks/{product_id}": {
+      "get": {
+        "tags": ["Stock"],
+        "summary": "Riwayat mutasi stok produk",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Daftar mutasi stok" }
+        }
+      }
+    },
+
+    "/suppliers": {
+      "get": {
+        "tags": ["Supplier"],
+        "summary": "Ambil semua supplier",
+        "responses": {
+          "200": { "description": "Daftar supplier" }
+        }
+      },
+      "post": {
+        "tags": ["Supplier"],
+        "summary": "Tambah supplier",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "name": "PT Elektronik Jaya",
+                "contact": "0821123456",
+                "address": "Jl. Industri No.88"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Supplier ditambahkan" }
+        }
+      }
+    },
+    "/suppliers/{id}": {
+      "get": {
+        "tags": ["Supplier"],
+        "summary": "Detail supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Detail supplier" }
+        }
+      },
+      "put": {
+        "tags": ["Supplier"],
+        "summary": "Update supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "name": "PT Elektronik Jaya Update",
+                "contact": "08991234567",
+                "address": "Jl. Teknologi No.77"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Supplier diperbarui" }
+        }
+      },
+      "delete": {
+        "tags": ["Supplier"],
+        "summary": "Hapus supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Supplier dihapus" }
+        }
+      }
+    }
+  }
+}
